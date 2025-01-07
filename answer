@@ -1,0 +1,18 @@
+TASK 1
+docker run -d -p 8080:80 httpd:2.4
+docker logs <container_id> or <container_name>
+docker exec -it <container_id> /bin/bash
+>echo '<html><body><h1>Welcome to My Updated Website!</h1><p>This is a new page.</p></body></html>' > /usr/local/apache2/htdocs/index.html
+
+TASK 3
+option 1
+docker build -t my-webserver .
+docker run -p 8080:80 my-webserver
+
+option 2
+docker run -p 8080:80 -v ${PWD}/static:/usr/local/apache2/htdocs/:ro httpd:2.4
+
+TASK 4
+mvn clean package
+docker build -t my-web-servlet .
+docker run -p 8080:8080  my-web-servlet

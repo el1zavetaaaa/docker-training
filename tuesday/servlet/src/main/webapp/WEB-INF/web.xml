@@ -14,7 +14,18 @@
 
     <servlet-mapping>
         <servlet-name>controller</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>user-servlet</servlet-name>
+        <servlet-class>com.nourish1709.learning.servlet.UserServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>user-servlet</servlet-name>
+        <url-pattern>/user</url-pattern>
     </servlet-mapping>
 
     <session-config>
